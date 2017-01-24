@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1 class="blog">Blogs Home</h1><hr><br><br>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<img src="{% static "images/blog.png" %}" class="img-responsive" alt="blog">
+			</div>
+			<div class="col-md-6 text-center">
+				<h3><a href="{% url "blog_page" %}"> See Blogs </a></h3>
+			</div>
+		</div>
+	</div>
+{% endblock %}

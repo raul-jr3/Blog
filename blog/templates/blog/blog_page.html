@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Blogs {% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h3>Blogs</h3><hr>
+			</div>
+			<div class="col-md-6 text-right">
+				<h3><a href="{% url "main_page" %}"> Home </a></h3><hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				{% if posts %}
+					<ul>
+						{% for post in posts %}
+							<h2><li>{{ post.title }}</h2></li>
+							<h4> by <b><i>{{ user.username }}</i></b><br> </h4><br><br>
+							<h4>{{ post.body }}</h4><br>
+							<p>{{ post.created }}</p><hr>
+						{% endfor %}
+					</ul>
+				{% else %}
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h3>You don't have any blogs yet.</h3><hr>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<img src="{% static "images/noblog.jpg" %}" class="img-responsive" alt="blog">
+						</div>
+						<div class="col-md-4">
+							<img src="{% static "images/bleh.jpg" %}" class="img-responsive" alt="blog">
+						</div>
+						<div class="col-md-4">
+							<img src="{% static "images/blah.jpg" %}" class="img-responsive" alt="blog">
+						</div>
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
