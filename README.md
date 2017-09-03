@@ -1,5 +1,5 @@
 <h1>Basic Blog using Django</h1>
-<p> A BASIC CMS. </p>
+
 Create a superuser account using the command <b><i>"python manage.py createsuperuser".</i></b>
 
 Run the server and navigate to http://127.0.0.1:8000/admin and login with the superuser account.
